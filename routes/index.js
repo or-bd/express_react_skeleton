@@ -11,7 +11,7 @@ const catcher = fn => async (req, res, next) => {
 };
 
 router.get('/', catcher((req, res) => {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 }));
 
 module.exports = router;

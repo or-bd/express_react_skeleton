@@ -6,11 +6,10 @@
 
 #### For development mode
 1. npm i
-2. npm start && npm run build:dev
+2. npm run start:dev
+3. npm run build:dev
 
 #### For production mode
-1. npm i --production
+1. npm i
 2. npm run build:prod
 3. npm start
-
-In both `production` and `development` mode the app runs at port 3000.

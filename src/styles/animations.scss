@@ -1,0 +1,137 @@
+@mixin box-shadow($values) {
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounceIn {
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+@keyframes zoomIn {
+  0%{
+    zoom: 0;
+  }
+  50%{
+    zoom: 90%
+  }
+  80%{
+    zoom: 105%;
+
+  }
+  100%{
+    zoom: 100%;
+  }
+}
+
+@keyframes boxFocusOn {
+  0%{
+    opacity: .4;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes boxFocusOff {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: .4;
+  }
+}
+
+@keyframes bounceInLeft {
+  0%{
+    opacity: 0;
+    left: -1000px;
+  }
+  50%{
+    opacity: 1;
+    left: 30px;
+  }
+  80%{
+    opacity: 1;
+    left: -20px;
+  }
+  100%{
+    opacity: 1;
+    left: -10px;
+  }
+}
+
+@keyframes bounceInLeftMobile {
+  0%{
+    opacity: 0;
+    left: -1000px;
+  }
+  50%{
+    opacity: 1;
+    left: 30px;
+  }
+  80%{
+    opacity: 1;
+    left: 5px;
+  }
+  100%{
+    opacity: 1;
+    left: 10px;
+  }
+}
+
+@keyframes jump {
+  0%{
+    bottom: 0;
+  }
+  30%{
+    bottom: 10px;
+  }
+  50%{
+    bottom: 0;
+  }
+  80%{
+    bottom: 5px;
+  }
+  100%{
+    bottom: 0;
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}

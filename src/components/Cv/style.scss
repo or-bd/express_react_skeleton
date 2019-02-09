@@ -1,0 +1,58 @@
+@import "../../styles/animations";
+
+#cv-container {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 40px;
+
+  h2 {
+    position: absolute;
+    top: -13px;
+    opacity: 0;
+    margin: 0;
+    background-color: #d4edff;
+    border: 1px solid #a6daff;
+    font-size: .9em;
+    padding: 3px 5px;
+    @include box-shadow(3px 3px 20px -4px rgba(0,0,0,0.75));
+    &.visible {
+      animation: bounceInLeft .8s forwards ease-out;
+    }
+  }
+
+  .box {
+    padding: 25px 10px 10px 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+aside {
+  width: 28%;
+  display: inline-block;
+  vertical-align: top;
+
+  section {
+    width: 90%;
+  }
+}
+
+main {
+  width: 72%;
+  display: inline-block;
+
+  section {
+    width: 97%;
+  }
+}
+
+section {
+  position: relative;
+  background-color: #eaeaea;
+  margin: 0 auto 20px auto;
+  border: 1px solid #d2d2d2;
+}

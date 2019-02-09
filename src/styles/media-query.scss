@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  #cv-container {
+    max-width: 95%;
+
+    h2 {
+      &.visible {
+        animation: bounceInLeftMobile .8s forwards ease-out !important;
+      }
+    }
+
+    aside, main, section, article {
+      width: 99.7%;
+    }
+
+    section {
+      &.no-focus {
+        animation: boxFocusOff .5s forwards ease-out;
+      }
+
+      &.focused {
+        animation: boxFocusOn .5s forwards ease-out;
+      }
+    }
+
+    #photo img {
+      bottom: 145px;
+    }
+
+    #my-app {
+      min-height: 60px !important;
+      #description {
+        display: block !important;
+        font-size: 0.80em;
+      }
+
+      #link {
+        display: block;
+        font-size: 0.85em;
+        margin: 0 !important;
+      }
+    }
+
+    #skills-container {
+      width: 304px;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const BUILD_DIR = path.resolve(__dirname, 'public');
 const APP_DIR = path.resolve(__dirname, 'src');
@@ -86,11 +87,7 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'css/style.css',
     }),
+    new LiveReloadPlugin(),
   ],
-  devServer: {
-    contentBase: path.join(__dirname, 'src'),
-    compress: true,
-    port: 9000,
-  },
   mode: 'development',
 };

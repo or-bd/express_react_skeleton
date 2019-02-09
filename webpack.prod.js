@@ -59,6 +59,17 @@ module.exports = {
         ],
       },
       {
+        test: /\.(txt|xml)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           {
@@ -88,5 +99,5 @@ module.exports = {
     }),
   ],
   devtool: 'source-map',
-  mode: 'production'
+  // mode: 'production',
 };

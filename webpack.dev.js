@@ -1,15 +1,15 @@
-const path = require('path');
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
-const APP_DIR = path.resolve(__dirname, 'src');
+const BUILD_DIR = resolve(__dirname, 'public');
+const APP_DIR = resolve(__dirname, 'src');
 
 module.exports = {
   entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
-    publicPath: BUILD_DIR,
+    publicPath: '/',
     filename: 'js/bundle.js',
   },
   module: {
@@ -37,12 +37,6 @@ module.exports = {
             },
             {
               loader: 'sass-loader',
-              options: {
-                minimize: true,
-                discardComments: {
-                  removeAll: true,
-                },
-              },
             }],
         }),
       },
@@ -87,7 +81,17 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'css/style.css',
     }),
-    new LiveReloadPlugin(),
+    new HtmlWebpackPlugin({
+      template: `${APP_DIR}/index.html`,
+    }),
   ],
+  devServer: {
+    contentBase: APP_DIR,
+    compress: true,
+    port: 3001,
+    proxy: {
+      '/api': 'http://localhost:3001',
+    },
+  },
   mode: 'development',
 };

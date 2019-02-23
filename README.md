@@ -6,8 +6,8 @@
 
 #### For development mode
 1. npm i
-2. npm run start:dev
-3. npm run build:dev
+2. npm start
+3. npm run dev
 
 #### For production mode
 1. npm i

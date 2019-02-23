@@ -1,15 +1,16 @@
-const path = require('path');
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'public');
-const APP_DIR = path.resolve(__dirname, 'src');
+const BUILD_DIR = resolve(__dirname, 'public');
+const APP_DIR = resolve(__dirname, 'src');
 
 module.exports = {
   entry: `${APP_DIR}/index.js`,
   output: {
     path: BUILD_DIR,
-    publicPath: BUILD_DIR,
+    publicPath: '/',
     filename: 'js/bundle.js',
   },
   module: {
@@ -84,11 +85,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new UglifyJsPlugin({
-      parallel: true,
+    new TerserPlugin({
       sourceMap: true,
-      uglifyOptions: {
-        toplevel: true,
+      parallel: true,
+      terserOptions: {
         output: {
           comments: false,
         },
@@ -96,6 +96,14 @@ module.exports = {
     }),
     new ExtractTextPlugin({
       filename: 'css/style.css',
+    }),
+    new HtmlWebpackPlugin({
+      template: `${APP_DIR}/index.html`,
+      filename: `${BUILD_DIR}/index.html`,
+      minify: {
+        collapseWhitespace: true,
+        preserveLineBreaks: false,
+      },
     }),
   ],
   devtool: 'source-map',

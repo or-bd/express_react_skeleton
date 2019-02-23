@@ -6,12 +6,12 @@ const catcher = fn => async (req, res, next) => {
   try {
     await fn(req, res, next);
   } catch (e) {
-    res.status(e.code).send({ msg: e.msg });
+    res.status(e.code).send({msg: e.msg});
   }
 };
 
 router.get('/', catcher((req, res) => {
-  res.render('index');
+  res.json({ success: true });
 }));
 
 module.exports = router;

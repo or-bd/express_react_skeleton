@@ -1,19 +1,52 @@
-# React & ExpressJs skeleton
+# React & Express skeleton
+
+Skeleton project for those who want to use React (16.8.2) at the 
+client and Express as a server in the same project.
 
 ### Installation:
-1. git clone https://github.com/or-bd/express_react_skeleton.git
-2. cd `express_react_skeleton`
 
-#### For development mode
-1. npm i
-2. npm start
-3. npm run dev
+```
+& git clone https://github.com/or-bd/express_react_skeleton.git
+```
 
-#### For production mode
-1. npm i
-2. npm run build:prod
-3. npm start
+__Development__ - Install all of the NPM dependencies:
 
-* Note that if you run `npm run build:prod` at local which means your 
-code is ready for production use, you don't have to install all of npm
-packages in production server, so instead of `npm i` use `npm i --production`.
+```
+& cd express_react_skeleton && npm i
+```
+
+__Production__ - You don't need to install all the client dependencies in production so just add the `--production` flag: 
+
+```
+& cd express_react_skeleton && npm i --production
+```
+
+*__IMPORTANT__: Don't forget to run `npm run build:prod` in your local machine 
+__AFTER__ you finished your develop, it build the `public` folder and 
+Express will look for it in production.*
+
+### How it works
+
+The `src` directory should contain all of your client files 
+(JSX, styles etc..) while all the other are server (Express) 
+related. In the `package.json` file you'll find three main scripts:
+* `npm start` - will start the Express on http://localhost:3001.
+* `npm run dev` - will start `webpack-dev-server` on http://localhost:3000 and will listen to your `src` changes (hot-reload).
+* `npm run build:prod` - will create the `public` directory with compiled `bundle.js` (and other client resources) in it.
+
+By default, Express will looks for static files in the `public` directory and
+if it does'nt exists you'll get an error while you try to visit http://localhost:3001,
+which is OK if you are developing your app, BUT - when you finished 
+you must execute the `npm run build:prod` command to create this folder, 
+Express will serve your compiled files from there.
+
+Another main thing is that Express will listening to route `/api` and will send 
+all the other requests to your client side, it means that you should handle 
+your pages routes in React (consider [React-router](https://github.com/ReactTraining/react-router) as a main router).
+and if you need to send requests to your server just start with `/api`, for example:
+ 
+`
+GET /api/users/:id
+`
+
+*NOTE: ports configuration stored in `config.json` file`.*

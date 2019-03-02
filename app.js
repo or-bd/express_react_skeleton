@@ -3,9 +3,10 @@ const http = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const { SERVER_PORT } = require('./config.json');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || SERVER_PORT;
 const indexRouter = require('./routes/index');
 
 // app.set('views', path.join(__dirname, 'views'));

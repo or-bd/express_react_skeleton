@@ -49,4 +49,4 @@ and if you need to send requests to your server just start with `/api`, for exam
 GET /api/users/:id
 `
 
-*NOTE: ports configuration stored in `config.json` file`.*
+*NOTE: ports configuration stored in `config.json` file.*

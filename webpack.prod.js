@@ -60,7 +60,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(txt|xml)$/,
+        type: 'javascript/auto',
+        test: /\.(txt|xml|ico|json)$/,
         use: [
           {
             loader: 'file-loader',

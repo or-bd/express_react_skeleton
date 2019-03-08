@@ -1,3 +1,9 @@
+[![Express](https://img.shields.io/badge/express-v4.16.0-blue.svg)](https://www.npmjs.com/package/express/v/4.16.0)
+[![React](https://img.shields.io/badge/react-v16.8.2-blue.svg)](https://www.npmjs.com/package/react/v/16.8.2)
+[![Babel](https://img.shields.io/badge/babel-v7.2.2-blue.svg)](https://www.npmjs.com/package/@babel/core/v/7.2.2)
+[![Eslint](https://img.shields.io/badge/eslint-v5.11.1-blue.svg)](https://www.npmjs.com/package/eslint/v/5.11.1)
+[![Webpack](https://img.shields.io/badge/webpack-v4.28.4-blue.svg)](https://www.npmjs.com/package/webpack/v/4.28.4)
+
 # React & Express skeleton
 
 Skeleton project for those who want to use React (16.8.2) at the 

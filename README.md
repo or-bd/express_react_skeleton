@@ -6,8 +6,7 @@
 
 # React & Express skeleton
 
-Skeleton project for those who want to use React (16.8.2) at the 
-client and Express as a server in the same project.
+Skeleton project for those who want to use React at the client and Express as a server in the same project.
 
 ### Installation:
 

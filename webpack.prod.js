@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const BUILD_DIR = resolve(__dirname, 'public');
@@ -21,31 +22,14 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-            }],
-        }),
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                minimize: true,
-                discardComments: {
-                  removeAll: true,
-                },
-              },
-            }],
-        }),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|ico)$/,
@@ -85,6 +69,9 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
   plugins: [
     new TerserPlugin({
       sourceMap: true,
@@ -95,7 +82,7 @@ module.exports = {
         },
       },
     }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'css/style.css',
     }),
     new HtmlWebpackPlugin({

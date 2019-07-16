@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"css/style.css","sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/components/Root/style.scss"],"names":[],"mappings":"AAAA;AACA;AACA,aAAa;;AAEb;AACA;AACA;AACA;AACA,qBAAqB","file":"css/style.css","sourcesContent":["html, body {\n  margin: 0;\n  padding: 0; }\n\n#root {\n  width: 800px;\n  margin: 0 auto;\n  max-width: 90%;\n  text-align: center; }\n"],"sourceRoot":""}

@@ -1,4 +1,4 @@
 {
   "presets" : ["@babel/env", "@babel/react"],
-  "plugins": ["transform-es2015-destructuring", "transform-object-rest-spread",["transform-class-properties", { "spec": true }]]
+  "plugins": ["@babel/plugin-transform-destructuring", "@babel/plugin-proposal-object-rest-spread"]
 }

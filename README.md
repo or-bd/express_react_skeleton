@@ -1,8 +1,8 @@
 [![Express](https://img.shields.io/badge/express-v4.16.0-blue.svg)](https://www.npmjs.com/package/express/v/4.16.0)
-[![React](https://img.shields.io/badge/react-v16.8.2-blue.svg)](https://www.npmjs.com/package/react/v/16.8.2)
-[![Babel](https://img.shields.io/badge/babel-v7.2.2-blue.svg)](https://www.npmjs.com/package/@babel/core/v/7.2.2)
-[![Eslint](https://img.shields.io/badge/eslint-v5.11.1-blue.svg)](https://www.npmjs.com/package/eslint/v/5.11.1)
-[![Webpack](https://img.shields.io/badge/webpack-v4.28.4-blue.svg)](https://www.npmjs.com/package/webpack/v/4.28.4)
+[![React](https://img.shields.io/badge/react-v16.8.6-blue.svg)](https://www.npmjs.com/package/react/v/16.8.6)
+[![Babel](https://img.shields.io/badge/babel-v7.5.4-blue.svg)](https://www.npmjs.com/package/@babel/core/v/7.5.4)
+[![Eslint](https://img.shields.io/badge/eslint-v5.16.0-blue.svg)](https://www.npmjs.com/package/eslint/v/5.16.0)
+[![Webpack](https://img.shields.io/badge/webpack-v4.35.3-blue.svg)](https://www.npmjs.com/package/webpack/v/4.35.3)
 
 # React & Express skeleton
 

@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { DEV_SERVER_PORT, SERVER_PORT } = require('./config.json');
 
 const BUILD_DIR = resolve(__dirname, 'public');
@@ -21,25 +21,14 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-            }],
-        }),
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-            },
-            {
-              loader: 'sass-loader',
-            }],
-        }),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|ico)$/,
@@ -80,7 +69,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'css/style.css',
     }),
     new HtmlWebpackPlugin({
